@@ -75,6 +75,7 @@ const PRODUCTS = [
     origin: 'Bihar & Uttarakhand',
     season: 'May – Jun',
     coa: 'COA/Aseptic Litchi COA.docx.pdf',
+    image: 'Images/litchi pulp.jpeg',
   },
   {
     id: 'mango',
@@ -117,6 +118,7 @@ const PRODUCTS = [
     origin: 'Meghalaya & Northeast India',
     season: 'Apr – Jul',
     coa: 'COA/Pineapple pulp COA.docx (3).pdf',
+    image: 'Images/pineapple pulp.jpeg',
   },
   {
     id: 'tomato',
@@ -131,6 +133,7 @@ const PRODUCTS = [
     origin: 'Andhra Pradesh & Maharashtra',
     season: 'Oct – Feb',
     coa: null,
+    image: 'Images/tomato pulp.jpeg',
   },
   {
     id: 'chilli',

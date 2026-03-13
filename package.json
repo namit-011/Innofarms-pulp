@@ -1,0 +1,10 @@
+{
+  "name": "innofarms-pulp",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx serve . -l ${PORT:-3000}"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

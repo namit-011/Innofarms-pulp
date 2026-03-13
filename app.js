@@ -32,6 +32,7 @@ const PRODUCTS = [
     season: 'Year-round',
     coa: 'COA/Guava pulp COA.docx (4).pdf',
     image: 'Images/guava pulp.jpg',
+    imgPos: 'center 80%',
   },
   {
     id: 'seabuckthorn',
@@ -47,6 +48,7 @@ const PRODUCTS = [
     season: 'Sep – Nov',
     coa: 'COA/Seabuckthorn pulp COA.docx (2).pdf',
     image: 'Images/sea buck thorn pulp.jpeg',
+    imgPos: 'center 60%',
   },
   {
     id: 'grapes',
@@ -76,6 +78,7 @@ const PRODUCTS = [
     season: 'May – Jun',
     coa: 'COA/Aseptic Litchi COA.docx.pdf',
     image: 'Images/litchi pulp.jpeg',
+    imgPos: 'center 55%',
   },
   {
     id: 'mango',
@@ -119,6 +122,7 @@ const PRODUCTS = [
     season: 'Apr – Jul',
     coa: 'COA/Pineapple pulp COA.docx (3).pdf',
     image: 'Images/pineapple pulp.jpeg',
+    imgPos: 'right center',
   },
   {
     id: 'tomato',
@@ -134,6 +138,7 @@ const PRODUCTS = [
     season: 'Oct – Feb',
     coa: null,
     image: 'Images/tomato pulp.jpeg',
+    imgPos: 'center 45%',
   },
   {
     id: 'chilli',
@@ -194,8 +199,10 @@ function renderProducts() {
     <div class="product-card" data-product="${p.id}">
       <div class="product-hero" style="background:${p.bgGrad}">
         ${p.image
-          ? `<img src="${p.image}" alt="${p.name}" class="product-hero-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span style="font-size:4.5rem;display:none">${p.emoji}</span>`
-          : `<span style="font-size:4.5rem">${p.emoji}</span>`
+          ? `<img src="${p.image}" alt="${p.name}" class="product-hero-img" style="object-position:${p.imgPos || 'center center'}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+             <span class="product-hero-fallback" style="display:none">${p.emoji}</span>
+             <div class="product-hero-overlay" style="background:linear-gradient(to bottom, transparent 30%, ${p.bgGrad.match(/#[0-9a-f]{3,6}/gi)?.[1] || 'rgba(0,0,0,0.1)'} 100%)"></div>`
+          : `<span class="product-hero-fallback">${p.emoji}</span>`
         }
       </div>
       <div class="product-body">
